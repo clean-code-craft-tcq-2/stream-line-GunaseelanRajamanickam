@@ -16,8 +16,8 @@ class SenderTest(unittest.TestCase):
         self.assertTrue(sender.readReadingsFromCSV(".\sensorData\ReadingsTest.csv") == [{'soc': '20', 'temp': '30', 'chargeRate': '20'}, {'soc': '22', 'temp': '32', 'chargeRate': '25'}])
 
     def test_sendSensorData(self):
-        self.assertTrue(sender.sendSensorData(".\sensorData\ReadingsTest.csv", sender.readReadingsFromCSV, sender.formatOutputStringAsCSV, sender.printOnConsole) == True)
-        self.assertTrue(sender.sendSensorData(".\sensorData\ReadingsTest.csv", sender.readReadingsFromCSV, sender.formatOutputStringAsJSON, sender.printOnConsole) == True)
+        self.assertTrue(sender.sendSensorData("\sensorData\ReadingsTest.csv", sender.readReadingsFromCSV, sender.formatOutputStringAsCSV, sender.printOnConsole) == True)
+        self.assertTrue(sender.sendSensorData("\sensorData\ReadingsTest.csv", sender.readReadingsFromCSV, sender.formatOutputStringAsJSON, sender.printOnConsole) == True)
 
 if __name__ == '__main__': # pragma: no cover
   unittest.main()
