@@ -47,7 +47,7 @@ jobs:
           path: ./htmlcov
           retention-days: 21
       - name: run console redirection and pipes
-        run: python sender.py | receiver.py
+        run: python sender.py | python receiver.py
       - name: run sender.test.py
         run: python sender.test.py
       - name: run receiver.test.py
