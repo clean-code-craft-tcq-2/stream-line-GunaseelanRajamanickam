@@ -65,12 +65,51 @@ This section lists the minimum functionality of the Sender and Receiver.
 - can either generate values for the parameters, or read from a file
 - uses console output to communicate the parameters.
 
+# Test Specification for the Sender
+### 1. Create a simple `sendSensorData` with a method:
+```
+sendSensorData(fileName)
+```
+The method reads the sensor data from the csv file which is supported by method `readReadingsFromCSV` which convert the csv into a dict
+### 2. Support `sendSensorData` to format the readings of dict into csv format
+### 3. Support `sendSensorData` to format the readings of dict into JSON format
+### 4. Support `sendSensorData` to print the formatted string in console
 ### The Receiver
 
 - reads the parameters from the console input
 - after reading every parameter, it prints the following:
     - maximum and minimum values in the incoming stream
     - [simple moving average](https://www.investopedia.com/terms/s/sma.asp) of the last 5 values
+
+# Test Specification for the Receiver
+### 1. Create a simple Min and Max of array of readings with a method:
+```
+calculateMinMaxReading(readings)
+```
+The method can take an array and return the dict of min and max of array using the following methods.
+```
+calculateMinReading(readings)
+calculateMaxReading(readings)
+```
+
+### 2. Create a simple moving average calculator for readings of window size 5 with a method:
+```
+calculateMovingAverage(readings, windowSize)
+```
+The method can take an array and return the simple moving average using the following methods.
+```
+createWindow(readings, windowSize)
+calculateSum(array)
+calculateAverage(array)
+roundOffAverage(value, digits)
+```
+### 3. Create a simple `inferReceivedData` method to integrate `calculateMinMaxReading` and `calculateMovingAverage`.
+### 4. Support `inferReceivedData` method to convert the statistics in csv format:
+For example, `soc:{'min': 20.0, 'max': 31.0},[23.8, 25.4, 26.8, 28.2]`.
+### 5. Support `inferReceivedData` method to print the formatted string in console
+### 6. Allow `inferReceivedData` method to handle multiple parameter readings
+For example, `soc`, `temp`, `chargeRate`
+### 7. Allow `inferReceivedData` method to read the console output of `sender.py`
 
 ## Quality Parameters
 
