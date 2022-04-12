@@ -15,7 +15,7 @@ class SenderTest(unittest.TestCase):
         self.assertTrue(receiver.createWindow([5,10,2,3,10,17,16,14], 5) == [[5, 10, 2, 3, 10], [10, 2, 3, 10, 17], [2, 3, 10, 17, 16], [3, 10, 17, 16, 14]])
     
     def test_formulateReadings(self):
-        self.assertTrue(receiver.formulateReadings("5,10,20\n6,15,30") == [[5,10,20],[6,15,30]])
+        self.assertTrue(receiver.formulateReadings(['5,10,20\n','6,15,30\n']) == [[5,10,20],[6,15,30]])
 
     def test_extractEachParameterReadings(self):
         self.assertTrue(receiver.extractEachParameterReadings([[5,10,20],[6,15,30]], "soc") == [5,6])
