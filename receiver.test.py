@@ -1,6 +1,5 @@
 import unittest
 import receiver
-import mock
 
 class SenderTest(unittest.TestCase):
     def test_printOnConsole(self):
