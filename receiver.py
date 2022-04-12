@@ -14,6 +14,7 @@ def inferReceivedData(windowSize, readFromConsole, formulateReadings, extractEac
         printOnConsole(formattedString)
 
 def readFromConsole():
+    print(sys.version)
     lines = sys.stdin.readlines()
     return lines
     
