@@ -6,14 +6,17 @@ parameters = ["soc", "temp", "chargeRate"]
 def inferReceivedData(windowSize, readFromConsole, formulateReadings, extractEachParameterReadings, calculateMovingAverage, calculateMinMaxReading, convertCSVFormat, printOnConsole):
     stream = readFromConsole()
     mergedreadings = formulateReadings(stream)
+    statisticsReading = []
     for parameter in parameters:
         readings = extractEachParameterReadings(mergedreadings, parameter)
         movingAverage = calculateMovingAverage(readings, windowSize)
         minMaxReading = calculateMinMaxReading(readings)
         formattedString = convertCSVFormat(parameter,minMaxReading,movingAverage)
+        statisticsReading.append(formattedString)
         printOnConsole(formattedString)
+    return statisticsReading
 
-def readFromConsole():
+def readFromConsole():  # pragma: no cover
     lines = sys.stdin.readlines()
     return lines
     
