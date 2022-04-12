@@ -29,7 +29,7 @@ jobs:
           coverage run --branch sender.test.py
           coverage html
           coverage report
-      - name: Upload coverage
+      - name: Upload coverage for sender
         uses: actions/upload-artifact@v2
         with:
           name: coverageSender
@@ -40,15 +40,15 @@ jobs:
           coverage run --branch receiver.test.py
           coverage html
           coverage report
-      - name: Upload coverage
+      - name: Upload coverage for sender
         uses: actions/upload-artifact@v2
         with:
           name: coverageReceiver
           path: ./htmlcov
           retention-days: 21
-      - name: run
+      - name: run console redirection and pipes
         run: python sender.py | receiver.py
-      - name: run
+      - name: run sender.test.py
         run: python sender.test.py
-      - name: run
+      - name: run receiver.test.py
         run: python receiver.test.py

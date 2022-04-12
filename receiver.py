@@ -1,5 +1,6 @@
 
 import sys
+from signal import signal, SIGPIPE, SIG_DFL
 
 parameters = ["soc", "temp", "chargeRate"]
 
@@ -14,6 +15,7 @@ def inferReceivedData(windowSize, readFromConsole, formulateReadings, extractEac
         printOnConsole(formattedString)
 
 def readFromConsole():
+    signal(SIGPIPE,SIG_DFL)
     lines = sys.stdin.readlines()
     return lines
     
