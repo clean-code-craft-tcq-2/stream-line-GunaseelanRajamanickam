@@ -14,6 +14,11 @@ class SenderTest(unittest.TestCase):
     
     def test_createWindow(self):
         self.assertTrue(receiver.createWindow([5,10,2,3,10,17,16,14], 5) == [[5, 10, 2, 3, 10], [10, 2, 3, 10, 17], [2, 3, 10, 17, 16], [3, 10, 17, 16, 14]])
+
+    def test_getindex(self):
+        self.assertTrue(receiver.getindex("soc") == 0)
+        self.assertTrue(receiver.getindex("temp") == 1)
+        self.assertTrue(receiver.getindex("chargeRate") == 2)
     
     def test_formulateReadings(self):
         self.assertTrue(receiver.formulateReadings(['5,10,20\n','6,15,30\n']) == [[5,10,20],[6,15,30]])
