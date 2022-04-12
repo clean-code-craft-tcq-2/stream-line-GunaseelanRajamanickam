@@ -47,10 +47,8 @@ jobs:
           path: ./htmlcov
           retention-days: 21
       - name: run
-        run: python sender.py
+        run: python sender.py | receiver.py
       - name: run
         run: python sender.test.py
-      - name: run
-        run: python sender.py | receiver.py
       - name: run
         run: python receiver.test.py

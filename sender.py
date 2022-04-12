@@ -6,7 +6,6 @@ def sendSensorData(fileName, readReadingsFromCSV, formatOutputString, printOnCon
     readings = readReadingsFromCSV(fileName)
     for reading in readings:
         formattedstring = formatOutputString(reading)
-        sys.stdout.flush()
         printOnConsole(formattedstring)
     return True
 
