@@ -3,7 +3,6 @@ import csv
 
 def sendSensorData(fileName, readReadingsFromCSV, formatOutputString, printOnConsole):
     readings = readReadingsFromCSV(fileName)
-    printOnConsole("soc,temp,chargeRate")
     for reading in readings:
         formattedstring = formatOutputString(reading)
         printOnConsole(formattedstring)
@@ -28,3 +27,6 @@ def formatOutputStringAsCSV(streamReading):
 def printOnConsole(string):
     print(string)
     return True
+
+if __name__ == '__main__': # pragma: no cover
+  sendSensorData(".\sensorData\Readings.csv", readReadingsFromCSV, formatOutputStringAsCSV, printOnConsole)
