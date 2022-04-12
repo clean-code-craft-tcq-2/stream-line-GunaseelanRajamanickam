@@ -1,6 +1,5 @@
 import json
 import csv
-import sys
 
 def sendSensorData(fileName, readReadingsFromCSV, formatOutputString, printOnConsole):
     readings = readReadingsFromCSV(fileName)
