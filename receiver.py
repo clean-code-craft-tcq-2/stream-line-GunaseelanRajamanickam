@@ -26,7 +26,13 @@ def formulateReadings(stream):
     return mergedReadings
 
 def extractEachParameterReadings(mergedReadings, parameter):
-    return [readings[index] for readings in mergedReadings for index, parameterName in enumerate(parameters) if parameterName == parameter]
+    index = getindex(parameter)
+    return [readings[index] for readings in mergedReadings]
+
+def getindex(parameter):
+    for index, parameterName in enumerate(parameters):
+        if parameterName == parameter:
+            return index
 
 def calculateMovingAverage(readings, windowSize):
     windows = createWindow(readings, windowSize)

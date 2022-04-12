@@ -17,7 +17,7 @@ class SenderTest(unittest.TestCase):
     def test_formulateReadings(self):
         self.assertTrue(receiver.formulateReadings("5,10,20\n6,15,30") == [[5,10,20],[6,15,30]])
 
-    def test_formulateReadings(self):
+    def test_extractEachParameterReadings(self):
         self.assertTrue(receiver.extractEachParameterReadings([[5,10,20],[6,15,30]], "soc") == [5,6])
         self.assertTrue(receiver.extractEachParameterReadings([[5,10,20],[6,15,30]], "temp") == [10,15])
         self.assertTrue(receiver.extractEachParameterReadings([[5,10,20],[6,15,30]], "chargeRate") == [20,30])

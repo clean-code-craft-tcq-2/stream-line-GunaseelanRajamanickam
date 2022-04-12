@@ -29,4 +29,4 @@ def printOnConsole(string):
     return True
 
 if __name__ == '__main__': # pragma: no cover
-  sendSensorData(".\sensorData\Readings.csv", readReadingsFromCSV, formatOutputStringAsCSV, printOnConsole)
+  sendSensorData("./sensorData/Readings.csv", readReadingsFromCSV, formatOutputStringAsCSV, printOnConsole)
