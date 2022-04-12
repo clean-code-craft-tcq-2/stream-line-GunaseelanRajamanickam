@@ -1,10 +1,12 @@
 import json
 import csv
+import sys
 
 def sendSensorData(fileName, readReadingsFromCSV, formatOutputString, printOnConsole):
     readings = readReadingsFromCSV(fileName)
     for reading in readings:
         formattedstring = formatOutputString(reading)
+        sys.stdout.flush()
         printOnConsole(formattedstring)
     return True
 
