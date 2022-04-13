@@ -65,6 +65,8 @@ This section lists the minimum functionality of the Sender and Receiver.
 - can either generate values for the parameters, or read from a file
 - uses console output to communicate the parameters.
 
+# Design of Sender
+![Design of Sender](/doc/senderDesign.png "Design of Sender")
 # Test Specification for the Sender
 ### 1. Create a simple `sendSensorData` with a method:
 ```
