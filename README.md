@@ -82,6 +82,8 @@ The method reads the sensor data from the csv file which is supported by method 
 - after reading every parameter, it prints the following:
     - maximum and minimum values in the incoming stream
     - [simple moving average](https://www.investopedia.com/terms/s/sma.asp) of the last 5 values
+# Design of Receiver
+![Design of Receiver](/doc/receiverDesign.png "Design of Receiver")
 
 # Test Specification for the Receiver
 ### 1. Create a simple Min and Max of array of readings with a method:
